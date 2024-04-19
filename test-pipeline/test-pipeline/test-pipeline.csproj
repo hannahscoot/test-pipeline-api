@@ -5,20 +5,17 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>test_pipeline</RootNamespace>
+	<!-- Had to set this to true to avoid below error during `docker run`.
+        (It was set to false by default. "false" means access to cultural data)
+
+        "Process terminated. Couldn't find a valid ICU package installed on the system.
+        Please install libicu (or icu-libs) using your package manager and try again.
+        Alternatively you can set the configuration flag System.Globalization.Invariant to true
+        if you want to run with no globalization support."
+    -->
+	<InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
-
-    <PropertyGroup>
-	    <!-- Had to set this to true to avoid below error during `docker run`.
-            (It was set to false by default. "false" means access to cultural data)
-
-            "Process terminated. Couldn't find a valid ICU package installed on the system.
-            Please install libicu (or icu-libs) using your package manager and try again.
-            Alternatively you can set the configuration flag System.Globalization.Invariant to true
-            if you want to run with no globalization support."
-        -->
-	    <InvariantGlobalization>true</InvariantGlobalization>
-    </PropertyGroup>
-
+	
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>

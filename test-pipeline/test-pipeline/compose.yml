@@ -4,3 +4,4 @@ services:
     build: .
     ports:
       - 5091:5091
+      - 7172:7172
