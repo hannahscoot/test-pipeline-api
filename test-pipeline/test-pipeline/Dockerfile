@@ -19,7 +19,6 @@ COPY --from=build /app/out ./
 
 # Expose the port your application will run on
 EXPOSE 5091
-EXPOSE 7172
 
 # Start the application
 ENTRYPOINT ["dotnet", "test-pipeline.dll"]
