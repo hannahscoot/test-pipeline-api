@@ -1,0 +1,6 @@
+services:
+  web:
+    pull_policy: build
+    build: .
+    ports:
+      - 5091:5091
